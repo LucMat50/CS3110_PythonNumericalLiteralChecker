@@ -14,3 +14,8 @@ _8_5_6_3_000000_ reject
 5 accept
 23000 accept
 34_12 accept
+6700 accept
+1234567891 accept
+3_4_5_6000 accept
+9 accept
+45789999764_9 accept

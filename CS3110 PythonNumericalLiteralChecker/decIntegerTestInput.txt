@@ -1,0 +1,10 @@
+0 reject
+0123 reject
+_123 reject
+89_ reject
+24590 accept
+123 accept
+5 accept
+23000 accept
+4,700 reject
+34_12 accept

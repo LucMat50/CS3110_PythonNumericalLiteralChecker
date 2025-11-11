@@ -1,0 +1,7 @@
+0 accept
+Hello reject
+189 accept
+75098723167 accept
+34 accept
+0.12 reject
+03 reject

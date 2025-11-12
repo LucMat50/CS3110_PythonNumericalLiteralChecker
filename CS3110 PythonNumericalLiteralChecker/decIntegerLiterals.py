@@ -20,6 +20,27 @@ class NFA:
         #Format: { "state": {"symbol": {next_state1, next_state2, ...}}}
         self.transitions = transitions
 
+    # GET_TRANSITION FUNCTION
+    # - Goes through tuple in transition dictionary
+    # - Returns next state or REJECTS input string if next_state is empty    
+    def get_transition(self, state, symbol):
+
+        #Get inner transition dictionary for the current state
+        state_transitions = self.transitions.get(state, {})
+
+        #Checks for direct single-symbol key transition first
+        if symbol in state_transitions:
+            return state_transitions[symbol]
+        
+        #Checks transition where key is tuple containing symbol
+        for keys, next_states, in state_transitions.items():
+            if isinstance(keys, tuple) and symbol in keys:
+                return next_states
+            
+        #Returns empty set if no transition is found    
+        return set()
+      
+
     #RUN FUNCTION 
     # - Simulates input_string through NFA
     # - Returns ACCEPT or REJECT

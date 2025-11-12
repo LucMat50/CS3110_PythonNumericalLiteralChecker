@@ -57,8 +57,12 @@ class NFA:
             # Sets next_states to the next state in the transitions dictionary
             next_states = set()
             for state in current_states:
-                if symbol in self.transitions.get(state, {}):
-                    next_states.update(self.transitions[state][symbol])
+
+                #Use get_transition function to get transition for each current state
+                transition_result = self.get_transition(state, symbol)
+
+                #Updates next_states to the next state after transition
+                next_states.update(transition_result)
 
             # Sets current_states to next_states
             current_states = next_states
@@ -85,46 +89,17 @@ def main():
         #Out transitions for state q0
         'q0':{
             ('1', '2', '3', '4', '5', '6', '7', '8', '9'): {'q1'}
-            #'1': {'q1'},
-            #'2': {'q1'},
-            #'3': {'q1'},
-            #'4': {'q1'},
-            #'5': {'q1'},
-            #'6': {'q1'},
-            #'7': {'q1'},
-            #'8': {'q1'},
-            #'9': {'q1'}
         },
 
         #Out transitions for state q1
         'q1':{
             ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'): {'q1'},
-            #'0': {'q1'},
-            #'1': {'q1'},
-            #'2': {'q1'},
-            #'3': {'q1'},
-            #'4': {'q1'},
-            #'5': {'q1'},
-            #'6': {'q1'},
-            #'7': {'q1'},
-            #'8': {'q1'},
-            #'9': {'q1'},
             '_': {'q2'}
         },
 
         #Out transitions for state q2
         'q2':{
             ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'): {'q1'}
-            #'0': {'q1'},
-            #'1': {'q1'},
-            #'2': {'q1'},
-            #'3': {'q1'},
-            #'4': {'q1'},
-            #'5': {'q1'},
-            #'6': {'q1'},
-            #'7': {'q1'},
-            #'8': {'q1'},
-            #'9': {'q1'}
         }
     }
 

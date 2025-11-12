@@ -3,10 +3,6 @@
 # Recognizing an HexInteger
 # Name: Medha Swarnachandrabalaji
 
-# store user input as a string in user_input
-user_input = input("Enter your value: ")
-print(user_input)
-
 # takes in a string s and returns True if s is a valid HexInteger, False otherwise
 def is_valid_hexinteger(s: str) -> bool:
     # Must start with 0x or 0X and have at least one more character
@@ -35,3 +31,26 @@ def is_valid_hexinteger(s: str) -> bool:
             return False
 
     return seen_hex_digit and not previous_was_underscore
+
+# Keep prompting user to run program until they decide to end it.
+run_program = 'y'
+
+while run_program == 'y' or run_program == 'Y':
+    # store user input as a string in user_input
+    user_input = input("Enter your value: ")
+    print(user_input)
+
+    # Call function to evaluate if the user's string is a valid HexInteger
+    validHex = is_valid_hexinteger(user_input)
+
+    # Print Results
+    if validHex:
+        print("The value", user_input, "IS a valid HexInteger")
+    else:
+        print("The value", user_input, "is NOT a valid HexInteger")
+
+    # Ask user if they want to test another number
+    run_program = input(
+        "\nWould you like to test another value?\n"
+        "Enter 'y' for yes and any other character for no: "
+    )

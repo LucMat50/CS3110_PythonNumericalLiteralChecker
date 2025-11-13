@@ -112,17 +112,23 @@ def main():
         transitions = decInteger_transitions
     )
 
+    test_input = "CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt"
+    with open(test_input, 'r') as file:
+        for line in file:
+            test_num = line.split(' ')
+            print(test_num)
+
     # While loop that will allow user to test multiple inputs until they press any other character besides 'y'
-    continue_input = 'y'
-    while(continue_input == 'y'):
+    #continue_input = 'y'
+    #while(continue_input == 'y'):
 
-        user_input = input("Enter your value: ")
-        print(f"{user_input} : {decInteger_nfa.run(user_input)}")
+    #    user_input = input("Enter your value: ")
+    #    print(f"{user_input} : {decInteger_nfa.run(user_input)}")
 
-        continue_input = input("Would you like to continue? Press (y/n): ")
-        if continue_input != 'y':
-            print("Thank you for testing the decInteger NFA")
-            break
+    #    continue_input = input("Would you like to continue? Press (y/n): ")
+    #    if continue_input != 'y':
+    #        print("Thank you for testing the decInteger NFA")
+    #        break
 
 if __name__ == "__main__":
     main()

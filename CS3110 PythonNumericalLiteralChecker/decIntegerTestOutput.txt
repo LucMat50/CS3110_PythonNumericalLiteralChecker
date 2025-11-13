@@ -1,0 +1,40 @@
+TEST INPUT: 0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 0123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: _123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 89_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 4,700 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 000001 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 0000000000000000000000000000000000000005 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: _8_4445 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 90_9875_87_9_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: _8_5_6_3_000000_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 24590 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 23000 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 34_12 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 6700 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 1234567891 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 3_4_5_6000 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 9 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------
+TEST INPUT: 45789999764_9 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass
+-----------------------------------------------------------------------------

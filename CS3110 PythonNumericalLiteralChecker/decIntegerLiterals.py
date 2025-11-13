@@ -114,11 +114,13 @@ def main():
 
     #Text file with test inputs for decinteger NFA
     test_input = "CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt"
+
+    #Text file where results for the test inputs will be added/overwritten
     test_output = "CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt"
 
     #Reads through each line of test_input file
     with open(test_input, 'r') as file:
-        result = ""
+        result = "DECINTEGER TEST OUTPUT\n-------------------------------------\n\n"
         for line in file:
 
             #Splits line for first space --> stores first word (the test input)
@@ -138,11 +140,9 @@ def main():
             
             #String is appended to result
             result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {actual_result} | PASS/FAIL: {pass_fail}\n"
-            result += "-----------------------------------------------------------------------------\n"
-            #Prints out results
-            #print(f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {actual_result} | PASS/FAIL: {pass_fail}\n")
-            #print("-----------------------------------------------------------------------------\n")
+            result += "-----------------------------------------------------------------------------\n\n"
     
+    #Overwrites output file with resulting string
     with open(test_output, 'w') as file:
         file.write(result)
 

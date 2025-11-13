@@ -52,7 +52,7 @@ class NFA:
         for symbol in input_string: 
             # If the symbol in the user's input is not in the alphabet reject
             if symbol not in self.alphabet:
-                return "REJECT"
+                return "reject"
 
             # Sets next_states to the next state in the transitions dictionary
             next_states = set()
@@ -69,14 +69,14 @@ class NFA:
 
             # Rejects user's input if no transitions were defined for current symbol (current_state is empty)
             if not current_states:
-                return "REJECT"
+                return "reject"
         
         # If current_states is in accept_state then accept
         if bool(current_states.intersection(self.accept_states)) == True:
-            return "ACCEPT"
+            return "accept"
         # if current_states is not in accept_state then reject
         else: 
-            return "REJECT"
+            return "reject"
 
 #MAIN FUNCTION
 # - Defines the decInteger NFA's transitions
@@ -112,25 +112,31 @@ def main():
         transitions = decInteger_transitions
     )
 
+    #Text file with test inputs for decinteger NFA
     test_input = "CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt"
+
+    #Reads through each line of test_input file
     with open(test_input, 'r') as file:
         for line in file:
+
+            #Splits line for first space --> stores first word (the test input)
             test_num = line.split(' ', 1)[0]
-            expect_result = line.split(' ', 1)[1]
-            print(f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {decInteger_nfa.run(test_num)}\n")
-            print("------------------------------\n")
 
-    # While loop that will allow user to test multiple inputs until they press any other character besides 'y'
-    #continue_input = 'y'
-    #while(continue_input == 'y'):
+            #Splits line for first space --> stores second word (the expected result)
+            expect_result = line.split(' ', 1)[1].rstrip()
 
-    #    user_input = input("Enter your value: ")
-    #    print(f"{user_input} : {decInteger_nfa.run(user_input)}")
+            #Calls run function to test the input through NFA
+            actual_result = decInteger_nfa.run(test_num)
 
-    #    continue_input = input("Would you like to continue? Press (y/n): ")
-    #    if continue_input != 'y':
-    #        print("Thank you for testing the decInteger NFA")
-    #        break
+            #If the expected result matches the actual result set to pass else fail
+            if (expect_result == actual_result):
+                pass_fail = "pass"
+            else:
+                pass_fail = "fail"
+            
+            #Prints out results
+            print(f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {actual_result} | PASS/FAIL: {pass_fail}\n")
+            print("-----------------------------------------------------------------------------\n")
 
 if __name__ == "__main__":
     main()

@@ -116,6 +116,8 @@ def test_input_file(nfa):
     with test_output as file:
         file.write(result)
 
+    print(f"RESULTS CAN NOW BE SEEN IN FILE: CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt\n")
+
 #TEST_USER_INPUT FUNCTION
 # - Takes in user input and determines whether NFA would accept or reject
 def test_user_input(nfa):
@@ -165,19 +167,36 @@ def main():
         transitions = decInteger_transitions
     )
 
+    #Prints menu options
     print("==================================")
     print("MENU: \n==================================\n")
-    print("1 : TEST INPUT FILE\n")
-    print("----------------------------------\n")
-    print("2 : TEST USER INPUT\n")
-    print("----------------------------------\n")
+    print("----------------------------------")
+    print("1 : TEST INPUT FILE")
+    print("----------------------------------")
+    print("2 : TEST USER INPUT")
+    print("----------------------------------")
+    print("3: EXIT PROGRAM")
+    print("----------------------------------")
 
+    #Stores user's chosen option
     user_input = input("CHOOSE OPTION: ")
 
-    if (user_input == '1'):
-        test_input_file(decInteger_nfa)
-    elif (user_input == '2'):
-        test_user_input(decInteger_nfa)
+    #While user chooses option 1 (testing input file) or option 2 (testing own test strings)
+    #Continues prompting user to choose an option
+    while (user_input == '1' or user_input == '2'):
+        if (user_input == '1'):
+            test_input_file(decInteger_nfa)
+
+        elif (user_input == '2'):
+            test_user_input(decInteger_nfa)
+
+        user_input = input("CHOOSE OPTION: ")
+
+    #If user chooses option 3 (quit)
+    #Prints confirmation that program is exiting
+    if user_input == '3':
+        print("EXITING PROGRAM...")
+        print("THANK YOU FOR TESTING :D")
 
 if __name__ == "__main__":
     main()

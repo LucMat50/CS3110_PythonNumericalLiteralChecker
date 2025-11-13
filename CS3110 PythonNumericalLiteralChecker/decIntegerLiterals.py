@@ -115,8 +115,10 @@ def main():
     test_input = "CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt"
     with open(test_input, 'r') as file:
         for line in file:
-            test_num = line.split(' ')
-            print(test_num)
+            test_num = line.split(' ', 1)[0]
+            expect_result = line.split(' ', 1)[1]
+            print(f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {decInteger_nfa.run(test_num)}\n")
+            print("------------------------------\n")
 
     # While loop that will allow user to test multiple inputs until they press any other character besides 'y'
     #continue_input = 'y'

@@ -22,7 +22,7 @@ TEST INPUT: 000001 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL
 TEST INPUT: 0000000000000000000000000000000000000005 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: _8_4445 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
+TEST INPUT: 8_4445ε | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
 TEST INPUT: 90_9875_87_9_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass

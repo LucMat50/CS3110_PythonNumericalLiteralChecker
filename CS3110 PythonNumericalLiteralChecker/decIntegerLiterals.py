@@ -99,27 +99,28 @@ def main():
 
         #Out transitions for state q2
         'q2':{
-            ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'): {'q1'}
+            ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'): {'q1'},
+            'ε': {'q2'}
         }
     }
 
     #Define NFA that recognizes Decinteger values
     decInteger_nfa = NFA(
         states = ['q0', 'q1', 'q2'],
-        alphabet = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_'],
+        alphabet = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_', 'ε'],
         start_state = 'q0',
         accept_states = ['q1'],
         transitions = decInteger_transitions
     )
 
     #Text file with test inputs for decinteger NFA
-    test_input = "CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt"
+    test_input = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt", 'r')
 
     #Text file where results for the test inputs will be added/overwritten
-    test_output = "CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt"
+    test_output = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt", 'w')
 
     #Reads through each line of test_input file
-    with open(test_input, 'r') as file:
+    with test_input as file:
         result = "DECINTEGER TEST OUTPUT\n-------------------------------------\n\n"
         for line in file:
 
@@ -143,7 +144,7 @@ def main():
             result += "-----------------------------------------------------------------------------\n\n"
     
     #Overwrites output file with resulting string
-    with open(test_output, 'w') as file:
+    with test_output as file:
         file.write(result)
 
 if __name__ == "__main__":

@@ -78,6 +78,58 @@ class NFA:
         else: 
             return "reject"
 
+#TEST_INPUT_FILE FUNCTION
+# - reads through input file and creates string with pass/fail tests
+# - outputs in output file
+def test_input_file(nfa):
+    #Text file with test inputs for decinteger NFA
+    test_input = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt", 'r')
+
+    #Text file where results for the test inputs will be added/overwritten
+    test_output = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt", 'w')
+
+    #Reads through each line of test_input file
+    with test_input as file:
+        result = "DECINTEGER TEST OUTPUT\n-------------------------------------\n\n"
+        for line in file:
+
+            #Splits line for first space --> stores first word (the test input)
+            test_num = line.split(' ', 1)[0]
+
+            #Splits line for first space --> stores second word (the expected result)
+            expect_result = line.split(' ', 1)[1].rstrip()
+
+            #Calls run function to test the input through NFA
+            actual_result = nfa.run(test_num)
+
+            #If the expected result matches the actual result set to pass else fail
+            if (expect_result == actual_result):
+                pass_fail = "pass"
+            else:
+                pass_fail = "fail"
+            
+            #String is appended to result
+            result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {actual_result} | PASS/FAIL: {pass_fail}\n"
+            result += "-----------------------------------------------------------------------------\n\n"
+    
+    #Overwrites output file with resulting string
+    with test_output as file:
+        file.write(result)
+
+#TEST_USER_INPUT FUNCTION
+# - Takes in user input and determines whether NFA would accept or reject
+def test_user_input(nfa):
+    user_continue = 'y'
+    
+    while (user_continue == 'y'):
+        user_input = input("Enter test string: ")
+        reject_accept = nfa.run(user_input)
+        result = f"TEST INPUT: {user_input} | ACCEPT/REJECT: {reject_accept}"
+
+        print(f"{result}\n")
+
+        user_continue = input("Would you like to continue? (y/n)")
+
 #MAIN FUNCTION
 # - Defines the decInteger NFA's transitions
 # - Defines the decInteger nfa with the NFA class
@@ -113,39 +165,19 @@ def main():
         transitions = decInteger_transitions
     )
 
-    #Text file with test inputs for decinteger NFA
-    test_input = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt", 'r')
+    print("==================================")
+    print("MENU: \n==================================\n")
+    print("1 : TEST INPUT FILE\n")
+    print("----------------------------------\n")
+    print("2 : TEST USER INPUT\n")
+    print("----------------------------------\n")
 
-    #Text file where results for the test inputs will be added/overwritten
-    test_output = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt", 'w')
+    user_input = input("CHOOSE OPTION: ")
 
-    #Reads through each line of test_input file
-    with test_input as file:
-        result = "DECINTEGER TEST OUTPUT\n-------------------------------------\n\n"
-        for line in file:
-
-            #Splits line for first space --> stores first word (the test input)
-            test_num = line.split(' ', 1)[0]
-
-            #Splits line for first space --> stores second word (the expected result)
-            expect_result = line.split(' ', 1)[1].rstrip()
-
-            #Calls run function to test the input through NFA
-            actual_result = decInteger_nfa.run(test_num)
-
-            #If the expected result matches the actual result set to pass else fail
-            if (expect_result == actual_result):
-                pass_fail = "pass"
-            else:
-                pass_fail = "fail"
-            
-            #String is appended to result
-            result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {actual_result} | PASS/FAIL: {pass_fail}\n"
-            result += "-----------------------------------------------------------------------------\n\n"
-    
-    #Overwrites output file with resulting string
-    with test_output as file:
-        file.write(result)
+    if (user_input == '1'):
+        test_input_file(decInteger_nfa)
+    elif (user_input == '2'):
+        test_user_input(decInteger_nfa)
 
 if __name__ == "__main__":
     main()

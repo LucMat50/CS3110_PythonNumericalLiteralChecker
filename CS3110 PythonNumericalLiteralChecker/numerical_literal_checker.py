@@ -378,19 +378,35 @@ def main():
     # PRINT MENU
     print("==================================")
     print("MENU: \n==================================\n")
-    print("1 : TEST INPUT FILE\n")
-    print("----------------------------------\n")
-    print("2 : TEST USER INPUT\n")
-    print("----------------------------------\n")
+    print("----------------------------------")
+    print("1 : TEST INPUT FILE")
+    print("----------------------------------")
+    print("2 : TEST USER INPUT")
+    print("----------------------------------")
+    print("3: EXIT PROGRAM")
+    print("----------------------------------")
 
     user_input = input("CHOOSE OPTION: ")
     
-    if (user_input == '1'):
-        test_input_file(decInteger_nfa)
-    elif (user_input == '2'):
-        user_input_string = input("Enter test string: ")
-        label = recognize_userInput(user_input_string, pairs)
-        print("RESULT: ", label)
+    while True:
+
+        if (user_input == '1'):
+            test_input_file(decInteger_nfa)
+
+        elif (user_input == '2'):
+            user_input_string = input("Enter test string: ")
+            label = recognize_userInput(user_input_string, pairs)
+            print("RESULT: ", label)
+
+        elif (user_input == '3'):
+            print("\n EXITING PROGRAM")
+            print("THANK YOU FOR TESTING :D")
+            break
+
+        else:
+            print("\nERROR: INVALID OPTION TRY AGAIN")
+
+        user_input = input("CHOOSE OPTION: ")
 
 if __name__ == "__main__":
     main()

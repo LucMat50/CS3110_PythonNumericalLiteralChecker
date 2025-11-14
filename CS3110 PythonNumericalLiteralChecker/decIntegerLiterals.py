@@ -132,7 +132,8 @@ def test_user_input(nfa):
 
         print(f"{result}\n")
 
-        user_continue = input("Would you like to continue? (y/n)")
+        user_continue = input("Would you like to continue? (y/n): ")
+        print("")
 
 #MAIN FUNCTION
 # - Defines the decInteger NFA's transitions
@@ -183,22 +184,29 @@ def main():
     #Stores user's chosen option
     user_input = input("CHOOSE OPTION: ")
 
-    #While user chooses option 1 (testing input file) or option 2 (testing own test strings)
-    #Continues prompting user to choose an option
-    while (user_input == '1' or user_input == '2'):
+    #Infinite while loop
+    # - Breaks when user chooses option 3 (quit)
+    while True:
+        
+        #Calls test_input_file function
         if (user_input == '1'):
             test_input_file(decInteger_nfa)
 
+        #Calls test_user_input function
         elif (user_input == '2'):
             test_user_input(decInteger_nfa)
 
-        user_input = input("CHOOSE OPTION: ")
+        #Prints confirmation to quit and breaks out of while loop
+        elif (user_input == '3'):
+            print("\nEXITING PROGRAM...")
+            print("THANK YOU FOR TESTING :D")
+            break
+        
+        #Prints error message if option chosen is not on menu
+        else:
+            print("\nERROR: INVALID OPTION TRY AGAIN\n")
 
-    #If user chooses option 3 (quit)
-    #Prints confirmation that program is exiting
-    if user_input == '3':
-        print("EXITING PROGRAM...")
-        print("THANK YOU FOR TESTING :D")
+        user_input = input("CHOOSE OPTION: ")
 
 if __name__ == "__main__":
     main()

@@ -17,7 +17,7 @@ class NFA:
         #Set of accept states
         self.accept_states = set(accept_states)
 
-        #Format: { "state": {"symbol": {next_state1, next_state2, ...}}}
+        #Format: { "state": set("symbols") or 'symbol': {next_state1, next_state2, ...}}
         self.transitions = transitions
 
     # GET_TRANSITION FUNCTION
@@ -83,9 +83,11 @@ class NFA:
 # - outputs in output file
 def test_input_file(nfa):
     #Text file with test inputs for decinteger NFA
+    #Must change name to in_ans.txt
     test_input = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt", 'r')
 
     #Text file where results for the test inputs will be added/overwritten
+    #Must change name to out.txt
     test_output = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt", 'w')
 
     #Reads through each line of test_input file

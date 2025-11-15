@@ -206,55 +206,45 @@ def test_input_file(nfa):
 
 #TEST_USER_INPUT FUNCTION
 # - Takes in user input and determines whether NFA would accept or reject
-def test_user_input(nfa):
-    user_continue = 'y'
-    
-    while (user_continue == 'y'):
-        user_input = input("Enter test string: ")
-        reject_accept = nfa.run(user_input)
-        result = f"TEST INPUT: {user_input} | ACCEPT/REJECT: {reject_accept}"
-
-        print(f"{result}\n")
-
-        user_continue = input("Would you like to continue? (y/n)")
-
-
-
-#############################################################################
-
-
-
-def recognize_userInput(user_string, labeled_nfas):
+# - Outputs user's input, whether NFA accepts or rejects and which NFA specifically would accept
+def test_user_input(labeled_nfas):
     # function to recognize nfa but with label
     # Example: ("decinteger", decInteger_nfa)
     #             pair[0]        pair[1]
     
     # To store the labels where the users string was accepted by NFA
-    accepted_labels = []
+    user_continue = 'y'
 
-    for pair in labeled_nfas:
-        label = pair[0]
-        nfa_object = pair[1]
+    while (user_continue == 'y'):
 
-        # Run the users string input through NFA
-        result = nfa_object.run(user_string)
-        if result == "accept":
-            accepted_labels.append(label)
+        user_input = input("Enter test string: ")
+        accepted_labels = []
 
-    # If accepted_labels is empty, it was rejected by all NFA's
-    if len(accepted_labels) == 0:
-        return "reject"
+        for pair in labeled_nfas:
+            label = pair[0]
+            nfa_object = pair[1]
+
+            # Run the users string input through NFA
+            reject_accept = nfa_object.run(user_input)
+            if reject_accept == "accept":
+                accepted_labels.append(label)
+
+        # If accepted_labels is empty, it was rejected by all NFA's
+        if len(accepted_labels) == 0:
+            reject_accept = "reject"
     
-    # At this point, at least 1 NFA accepted:
-    recognized_nfas = accepted_labels[0]
+        # At this point, at least 1 NFA accepted:
+        recognized_nfas = accepted_labels[0]
 
-    # If perchance the label was accepted by more than 1 NFA
-    i = 1
-    while i < len(accepted_labels):
-        recognized_nfas = recognized_nfas + "," + accepted_labels[i]
-        i += 1  # apparently there is no i++ in python. Bruh.
-    
-    return recognized_nfas
+        # If perchance the label was accepted by more than 1 NFA
+        i = 1
+        while i < len(accepted_labels):
+            recognized_nfas = recognized_nfas + "," + accepted_labels[i]
+            i += 1  # apparently there is no i++ in python. Bruh.
+
+        result = f"TEST INPUT: {user_input} | ACCEPT/REJECT: {reject_accept} | NFA(S): {recognized_nfas}"
+        print(f"{result}\n")
+        user_continue = input("Would you like to continue? (y/n): ")
 
 
 
@@ -496,9 +486,8 @@ def main():
             test_input_file(decInteger_nfa)
 
         elif (user_input == '2'):
-            user_input_string = input("Enter test string: ")
-            label = recognize_userInput(user_input_string, pairs)
-            print("RESULT: ", label)
+            label = test_user_input(pairs)
+            #print("RESULT: ", label)
 
         elif (user_input == '3'):
             print("\n EXITING PROGRAM")

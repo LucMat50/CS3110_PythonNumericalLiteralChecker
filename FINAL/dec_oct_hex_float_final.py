@@ -163,40 +163,69 @@ class NFA:
 #TEST_INPUT_FILE FUNCTION
 # - reads through input file and creates string with pass/fail tests
 # - outputs in output file
-def test_input_file(nfa):
-    #Text file with test inputs for decinteger NFA
-    test_input = open("in.txt", 'r')
+def test_input_file(labeled_nfas):
+    
+    # INPUT FILE for TESTING
+    test_input = open("CS3110 PythonNumericalLiteralChecker\in.txt", 'r')
 
-    #Text file where results for the test inputs will be added/overwritten
-    test_output = open("out.txt", 'w')
+    # OUTPUT FILE of RESULTS: added/overwritten
+    test_output = open("CS3110 PythonNumericalLiteralChecker\out.txt", 'w')
 
-    #Reads through each line of test_input file
+    # READ through EACH LINE in file.
     with test_input as file:
-        result = "DECINTEGER | OCTINTEGER | HEXINTEGER | FLOATING POINT TEST OUTPUT\n-------------------------------------\n\n"
+        final_result = "DECINTEGER | OCTINTEGER | HEXINTEGER | FLOATING POINT TEST OUTPUT\n-------------------------------------\n\n"
         for line in file:
-
+            
             #Splits line for first space --> stores first word (the test input)
             test_num = line.split(' ', 1)[0]
 
             #Splits line for first space --> stores second word (the expected result)
             expect_result = line.split(' ', 1)[1].rstrip()
 
-            #Calls run function to test the input through NFA
-            actual_result = nfa.run(test_num)
+            # NFAS that accepted the line
+            accepted_labels = []
+
+            for pair in labeled_nfas:
+                label = pair[0]
+                nfa_object = pair[1]
+
+                # Run the users string input through NFA
+                result = nfa_object.run(test_num)
+
+                if result == "accept":
+                    accepted_labels.append(label)
+                    break
+
+
+            if len(accepted_labels) == 0:
+                reject_accept = "reject"
+                recognized_nfas = "None"
+
+            # At this point, at least 1 NFA accepted:
+            elif len(accepted_labels) >= 1: 
+                reject_accept = "accept"
+                recognized_nfas = accepted_labels[0]
+
+                # If perchance the label was accepted by more than 1 NFA
+                if len(accepted_labels) > 1:
+                    i = 1
+                    while i < len(accepted_labels):
+                        recognized_nfas = recognized_nfas + "," + accepted_labels[i]
+                        i += 1  # apparently there is no i++ in python. Bruh.
 
             #If the expected result matches the actual result set to pass else fail
-            if (expect_result == actual_result):
+            if (expect_result == reject_accept):
                 pass_fail = "pass"
             else:
                 pass_fail = "fail"
             
             #String is appended to result
-            result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {actual_result} | PASS/FAIL: {pass_fail}\n"
-            result += "-----------------------------------------------------------------------------\n\n"
+            final_result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {reject_accept} | PASS/FAIL: {pass_fail} by {recognized_nfas}\n"
+            final_result += "-----------------------------------------------------------------------------\n\n"
     
     #Overwrites output file with resulting string
     with test_output as file:
-        file.write(result)
+        file.write(final_result)
 
     print(f"RESULTS CAN NOW BE SEEN IN FILE: {test_output}\n")
 
@@ -491,7 +520,7 @@ def main():
     while True:
 
         if (user_input == '1'):
-            test_input_file(decInteger_nfa)
+            test_input_file(pairs)
 
         elif (user_input == '2'):
             label = test_user_input(pairs)

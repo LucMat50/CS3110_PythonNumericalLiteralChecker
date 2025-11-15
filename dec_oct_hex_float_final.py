@@ -1,6 +1,5 @@
 #CS3110 - FORMAL LANGUAGES AND AUTOMATA
-#RECOGNIZING DECINTEGER
-#NAME: LUCIA MATURINO INIGUEZ
+#RECOGNIZING DECINTEGER, OCTINTEGER, HEXINTEGER, FLOATING POINT LITERAL
 
 #NFA CLASS we can use for all NFAs
 class NFA:
@@ -92,7 +91,7 @@ def test_input_file(nfa):
 
     #Reads through each line of test_input file
     with test_input as file:
-        result = "DECINTEGER TEST OUTPUT\n-------------------------------------\n\n"
+        result = "DECINTEGER | OCTINTEGER | HEX | FLOAT TEST OUTPUT\n-------------------------------------\n\n"
         for line in file:
 
             #Splits line for first space --> stores first word (the test input)
@@ -142,7 +141,7 @@ def test_user_input(nfa):
 def main():
     
     #Transitions for NFA that recognizes Decinteger values
-    decInteger_transitions = {
+    dec_oct_hex_float_transitions = {
         #Out transitions for state q0
         'q0':{
             ('1', '2', '3', '4', '5', '6', '7', '8', '9'): {'q1'}

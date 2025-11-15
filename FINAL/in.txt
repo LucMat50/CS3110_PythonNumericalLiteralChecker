@@ -37,7 +37,7 @@ x123 reject
 0y23 reject
 0xG1 reject
 1234 accept
-0x 1F reject
+0x1F accept
 0x_1F accept
 0x_1F_1234F accept
 0o0 accept

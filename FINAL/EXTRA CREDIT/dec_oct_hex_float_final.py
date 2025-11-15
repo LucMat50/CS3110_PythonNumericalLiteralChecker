@@ -1,6 +1,6 @@
 # CS3110 - FORMAL LANGUAGES AND AUTOMATA
 # RECOGNIZING DECINTEGER, OCTINTEGER, and HEXINTEGER
-# NAME: JEANNETTE RUIZ
+# NAME: Fineite
 
 # For handling UNION of NFAs and more.
 epsilon = 'ε'
@@ -404,7 +404,9 @@ def main():
         'q16':{
             digits: {'q16'},
             underscore: {'q17'},
-            period : {'q18'}
+            period : {'q18'},
+            ('E', 'e'): {'q23'}
+            
         },
 
         'q17':{
@@ -412,6 +414,7 @@ def main():
         },
 
         'q18':{
+            epsilon: {'q21'},
             digits: {'q21'}
         },
 
@@ -419,6 +422,10 @@ def main():
             digits: {'q21'},
             underscore: {'q22'},
             ('E', 'e'): {'q23'}
+        },
+
+        'q22':{
+            digits: {'q21'}
         },
 
         'q23':{
@@ -480,7 +487,7 @@ def main():
 
     # (4b) Floating Point NFA
     floatingPoint_nfa1 = NFA(
-        states = ['q14', 'q15', 'q16', 'q17', 'q18', 'q21', 'q23', 'q24', 'q25', 'q26'],
+        states = ['q14', 'q15', 'q16', 'q17', 'q18', 'q21', 'q22', 'q23', 'q24', 'q25', 'q26'],
         alphabet = [digits, underscore, epsilon, period, '-', '+', 'e', 'E'],
         transitions = floatingPoint_transitions1,
         start_state = 'q15',

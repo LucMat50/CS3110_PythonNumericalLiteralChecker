@@ -118,7 +118,7 @@ TEST INPUT: 0xG1 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: 
 TEST INPUT: 1234 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x | EXPECTED RESULT: 1F reject | ACTUAL RESULT: reject | PASS/FAIL: fail by None
+TEST INPUT: 0x1F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
 -----------------------------------------------------------------------------
 
 TEST INPUT: 0x_1F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
@@ -193,10 +193,10 @@ TEST INPUT: 2.71828 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAI
 TEST INPUT: 4.0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
 -----------------------------------------------------------------------------
 
-TEST INPUT: 96_485.332_123 | EXPECTED RESULT: accept | ACTUAL RESULT: reject | PASS/FAIL: fail by None
+TEST INPUT: 96_485.332_123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
 -----------------------------------------------------------------------------
 
-TEST INPUT: 3.14_15_93 | EXPECTED RESULT: accept | ACTUAL RESULT: reject | PASS/FAIL: fail by None
+TEST INPUT: 3.14_15_93 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
 -----------------------------------------------------------------------------
 
 TEST INPUT: 10. | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
@@ -214,10 +214,10 @@ TEST INPUT: 1.166e-5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FA
 TEST INPUT: 6.02214076e+23 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1e3 | EXPECTED RESULT: accept | ACTUAL RESULT: reject | PASS/FAIL: fail by None
+TEST INPUT: 1e3 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0e0 | EXPECTED RESULT: accept | ACTUAL RESULT: reject | PASS/FAIL: fail by None
+TEST INPUT: 0e0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
 -----------------------------------------------------------------------------
 
 TEST INPUT: 1,000.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None

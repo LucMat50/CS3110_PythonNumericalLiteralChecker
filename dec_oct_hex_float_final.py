@@ -216,7 +216,7 @@ def test_user_input(labeled_nfas):
     user_continue = 'y'
 
     while (user_continue == 'y'):
-
+        print("\n----------------------------------")
         user_input = input("Enter test string: ")
         accepted_labels = []
 
@@ -250,7 +250,7 @@ def test_user_input(labeled_nfas):
                     recognized_nfas = recognized_nfas + "," + accepted_labels[i]
                     i += 1  # apparently there is no i++ in python. Bruh.
 
-        result = f"TEST INPUT: {user_input} | ACCEPT/REJECT: {reject_accept} | NFA(S): {recognized_nfas}"
+        result = f"\nTEST INPUT: {user_input} | ACCEPT/REJECT: {reject_accept} | NFA(S): {recognized_nfas}"
         print(f"{result}\n")
         user_continue = input("Would you like to continue? (y/n): ")
 
@@ -498,7 +498,7 @@ def main():
             #print("RESULT: ", label)
 
         elif (user_input == '3'):
-            print("\n EXITING PROGRAM")
+            print("\nEXITING PROGRAM")
             print("THANK YOU FOR TESTING :D")
             break
 

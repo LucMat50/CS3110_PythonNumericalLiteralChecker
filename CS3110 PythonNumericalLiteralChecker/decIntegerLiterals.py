@@ -83,12 +83,12 @@ class NFA:
 # - outputs in output file
 def test_input_file(nfa):
     #Text file with test inputs for decinteger NFA
-    #Must change name to in_ans.txt
-    test_input = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestInput.txt", 'r')
+    #Must change name to in.txt
+    test_input = open("in.txt", 'r')
 
     #Text file where results for the test inputs will be added/overwritten
     #Must change name to out.txt
-    test_output = open("CS3110 PythonNumericalLiteralChecker\decIntegerTestOutput.txt", 'w')
+    test_output = open("out.txt", 'w')
 
     #Reads through each line of test_input file
     with test_input as file:

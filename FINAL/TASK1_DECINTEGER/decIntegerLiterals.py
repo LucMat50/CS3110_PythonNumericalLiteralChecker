@@ -84,11 +84,11 @@ class NFA:
 def test_input_file(nfa):
     #Text file with test inputs for decinteger NFA
     #Must change name to in.txt
-    test_input = open("in.txt", 'r')
+    test_input = open("FINAL\in.txt", 'r')
 
     #Text file where results for the test inputs will be added/overwritten
     #Must change name to out.txt
-    test_output = open("out.txt", 'w')
+    test_output = open("FINAL\out.txt", 'w')
 
     #Reads through each line of test_input file
     with test_input as file:
@@ -118,7 +118,7 @@ def test_input_file(nfa):
     with test_output as file:
         file.write(result)
 
-    print(f"RESULTS CAN NOW BE SEEN IN FILE: out.txt\n")
+    print(f"RESULTS CAN NOW BE SEEN IN FILE: FINAL\out.txt\n")
 
 #TEST_USER_INPUT FUNCTION
 # - Takes in user input and determines whether NFA would accept or reject

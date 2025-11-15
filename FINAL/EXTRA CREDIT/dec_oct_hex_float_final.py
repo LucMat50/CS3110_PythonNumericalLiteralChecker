@@ -166,10 +166,10 @@ class NFA:
 def test_input_file(labeled_nfas):
     
     # INPUT FILE for TESTING
-    test_input = open("CS3110 PythonNumericalLiteralChecker\in.txt", 'r')
+    test_input = open("FINAL\in.txt", 'r')
 
     # OUTPUT FILE of RESULTS: added/overwritten
-    test_output = open("CS3110 PythonNumericalLiteralChecker\out.txt", 'w')
+    test_output = open("FINAL\out.txt", 'w')
 
     # READ through EACH LINE in file.
     with test_input as file:
@@ -227,7 +227,7 @@ def test_input_file(labeled_nfas):
     with test_output as file:
         file.write(final_result)
 
-    print(f"RESULTS CAN NOW BE SEEN IN FILE: {test_output}\n")
+    print(f"RESULTS CAN NOW BE SEEN IN FILE: FINAL\out.txt\n")
 
 #############################################################################
 

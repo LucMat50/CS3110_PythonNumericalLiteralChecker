@@ -369,11 +369,7 @@ def main():
 
     # FLOATING POINT #########################################
     # (4a) Floating point transitions
-    floatingPoint_transitions = {
-        'q14':{
-            epsilon : {'q15', 'q19'} 
-        },
-
+    floatingPoint_transitions1 = {
         'q15':{
             digits: {'q16'}
         },
@@ -392,6 +388,32 @@ def main():
             digits: {'q21'}
         },
 
+        'q21':{
+            digits: {'q21'},
+            underscore: {'q22'},
+            ('E', 'e'): {'q23'}
+        },
+
+        'q23':{
+            epsilon : {'q24'},
+            ('-', '+'): {'q24'}
+        },
+
+        'q24':{
+            digits: {'q25'}
+        },
+
+        'q25':{
+            digits: {'q25'},
+            underscore: {'q26'}
+        },
+
+        'q26':{
+            digits: {'q25'}
+        }
+    }
+
+    floatingPoint_transitions2 = {
         'q19':{
             period: {'q20'}
         },
@@ -411,7 +433,8 @@ def main():
         },
 
         'q23':{
-            (epsilon, '-', '+'): {'q24'}
+            epsilon : {'q24'},
+            ('-', '+'): {'q24'}
         },
 
         'q24':{
@@ -429,11 +452,19 @@ def main():
     }
 
     # (4b) Floating Point NFA
-    floatingPoint_nfa = NFA(
-        states = ['q14', 'q15', 'q16', 'q17', 'q18', 'q19', 'q20', 'q21', 'q22', 'q23', 'q24', 'q25', 'q26'],
+    floatingPoint_nfa1 = NFA(
+        states = ['q14', 'q15', 'q16', 'q17', 'q18', 'q21', 'q23', 'q24', 'q25', 'q26'],
         alphabet = [digits, underscore, epsilon, period, '-', '+', 'e', 'E'],
-        transitions = floatingPoint_transitions,
-        start_state = 'q14',
+        transitions = floatingPoint_transitions1,
+        start_state = 'q15',
+        accept_states = ['q18','q21', 'q25']
+    )
+
+    floatingPoint_nfa2 = NFA(
+        states = ['q14', 'q19', 'q20', 'q21', 'q22', 'q23', 'q24', 'q25', 'q26'],
+        alphabet = [digits, underscore, epsilon, period, '-', '+', 'e', 'E'],
+        transitions = floatingPoint_transitions2,
+        start_state = 'q19',
         accept_states = ['q21', 'q25']
     )
 
@@ -442,7 +473,8 @@ def main():
                 ("decinteger", decInteger_nfa),
                 ("octinteger",  octInteger_nfa),
                 ("hexinteger",  hexInteger_nfa),
-                ("floating point", floatingPoint_nfa)
+                ("floating point", floatingPoint_nfa1),
+                ("floating point", floatingPoint_nfa2)
             ]
     
     # PRINT MENU

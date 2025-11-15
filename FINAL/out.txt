@@ -1,240 +1,240 @@
 DECINTEGER | OCTINTEGER | HEXINTEGER | FLOATING POINT TEST OUTPUT
 -------------------------------------
 
-TEST INPUT: 0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: _123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: _123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 89_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 89_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 4,700 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 4,700 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 000001 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 000001 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0000000000000000000000000000000000000005 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0000000000000000000000000000000000000005 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 8_4445ε | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 8_4445ε | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 90_9875_87_9_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 90_9875_87_9_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: _8_5_6_3_000000_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: _8_5_6_3_000000_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 24590 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 24590 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 23000 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 23000 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 34_12 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 34_12 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 6700 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 6700 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1234567891 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 1234567891 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 3_4_5_6000 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 3_4_5_6000 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 9 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 9 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 45789999764_9 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 45789999764_9 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x1 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x1 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xA | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0xA | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xa | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0xa | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x10 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x10 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x2f | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x2f | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x2F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x2F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0X100 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0X100 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0XABC | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0XABC | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xdead | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0xdead | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xBEEF | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0xBEEF | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xCAFEBABE | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0xCAFEBABE | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x123abc | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x123abc | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xFACE | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0xFACE | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0x | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: x123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: x123 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0y23 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0y23 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0xG1 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0xG1 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1234 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by decinteger
+TEST INPUT: 1234 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): decinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x1F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x1F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x_1F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x_1F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0x_1F_1234F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by hexinteger
+TEST INPUT: 0x_1F_1234F | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): hexinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0o0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0O7 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0O7 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0o123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0O4_2_5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0O4_2_5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o7_6_5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0o7_6_5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0O1_234_567 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0O1_234_567 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0o5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0O7_0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0O7_0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o3_21 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0o3_21 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0O7_7_7_7 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0O7_7_7_7 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o_1 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by octinteger
+TEST INPUT: 0o_1 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): octinteger | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0o | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o1_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0o1_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o12__3 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0o12__3 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o89 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0o89 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0O_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0O_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0oA1 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0oA1 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0o_0_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0o_0_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0p77 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 0p77 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 00o12 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 00o12 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 2.71828 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 2.71828 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 4.0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 4.0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 96_485.332_123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 96_485.332_123 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 3.14_15_93 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 3.14_15_93 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 10. | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 10. | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: .001 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: .001 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1.0e3 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 1.0e3 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1.166e-5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 1.166e-5 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 6.02214076e+23 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 6.02214076e+23 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1e3 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 1e3 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 0e0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | PASS/FAIL: pass by floating point
+TEST INPUT: 0e0 | EXPECTED RESULT: accept | ACTUAL RESULT: accept | NFA(S): floating point | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1,000.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 1,000.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1.0_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 1.0_ | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1e | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 1e | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: 1.e | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: 1.e | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: +1.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: +1.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 
-TEST INPUT: -1.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | PASS/FAIL: pass by None
+TEST INPUT: -1.0 | EXPECTED RESULT: reject | ACTUAL RESULT: reject | NFA(S): None | PASS/FAIL: pass
 -----------------------------------------------------------------------------
 

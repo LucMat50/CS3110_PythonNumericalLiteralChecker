@@ -220,7 +220,7 @@ def test_input_file(labeled_nfas):
                 pass_fail = "fail"
             
             #String is appended to result
-            final_result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {reject_accept} | PASS/FAIL: {pass_fail} by {recognized_nfas}\n"
+            final_result += f"TEST INPUT: {test_num} | EXPECTED RESULT: {expect_result} | ACTUAL RESULT: {reject_accept} | NFA(S): {recognized_nfas} | PASS/FAIL: {pass_fail}\n"
             final_result += "-----------------------------------------------------------------------------\n\n"
     
     #Overwrites output file with resulting string

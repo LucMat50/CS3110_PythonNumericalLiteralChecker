@@ -225,22 +225,30 @@ def test_user_input(labeled_nfas):
             nfa_object = pair[1]
 
             # Run the users string input through NFA
-            reject_accept = nfa_object.run(user_input)
-            if reject_accept == "accept":
+            result = nfa_object.run(user_input)
+
+            if result == "accept":
                 accepted_labels.append(label)
 
-        # If accepted_labels is empty, it was rejected by all NFA's
+        #If accepted_labels is empty, it was rejected by all NFA's
+        #if len(accepted_labels) == 0:
+        #    reject_accept = "reject"
+
         if len(accepted_labels) == 0:
             reject_accept = "reject"
-    
-        # At this point, at least 1 NFA accepted:
-        recognized_nfas = accepted_labels[0]
+            recognized_nfas = "None"
 
-        # If perchance the label was accepted by more than 1 NFA
-        i = 1
-        while i < len(accepted_labels):
-            recognized_nfas = recognized_nfas + "," + accepted_labels[i]
-            i += 1  # apparently there is no i++ in python. Bruh.
+        # At this point, at least 1 NFA accepted:
+        elif len(accepted_labels) >= 1: 
+            reject_accept = "accept"
+            recognized_nfas = accepted_labels[0]
+
+            # If perchance the label was accepted by more than 1 NFA
+            if len(accepted_labels) > 1:
+                i = 1
+                while i < len(accepted_labels):
+                    recognized_nfas = recognized_nfas + "," + accepted_labels[i]
+                    i += 1  # apparently there is no i++ in python. Bruh.
 
         result = f"TEST INPUT: {user_input} | ACCEPT/REJECT: {reject_accept} | NFA(S): {recognized_nfas}"
         print(f"{result}\n")

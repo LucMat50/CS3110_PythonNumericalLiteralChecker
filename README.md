@@ -19,9 +19,9 @@ Accept or reject **Python numerical literals** using automata theory. We designe
 ## Team members
 | # | Member | GitHub | Roles |
 |---|--------|--------|--------------|
-| 1 | Lucia Maturino Iniguez | @LucMat50 | - Designed Decinteger NFA<br>- Coded NFA class following formal definition(states, transitions, alphabet, start state, accept state) <br>- NFA class performs transitions and runs input |
-| 2 | Jeannette Ruiz | @jeanrnette | - Designed OctInteger and Floating Point NFA<br>- Added epsilon-closure transitions<br>- Modified input reading to run input through multiple NFA's |
-| 3 | Medha Swarnachandrabalaji  | @MedhaS1 | - Designed HexInteger NFA<br>-Coded HexInteger NFA |
+| 1 | Lucia Maturino Iniguez | [@LucMat50](https://github.com/LucMat50) | - Designed Decinteger NFA<br>- Coded NFA class following formal definition(states, transitions, alphabet, start state, accept state) <br>- NFA class performs transitions and runs input |
+| 2 | Jeannette Ruiz | [@jeanrnette](https://github.com/jeanrnette) | - Designed OctInteger and Floating Point NFA<br>- Added epsilon-closure transitions<br>- Modified input reading to run input through multiple NFA's |
+| 3 | Medha Swarnachandrabalaji  | [@MedhaS1](https://github.com/MedhaS1) | - Designed HexInteger NFA<br>-Coded HexInteger NFA |
 
 ---
 
